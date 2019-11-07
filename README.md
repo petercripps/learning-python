@@ -3,7 +3,8 @@ This is a list of resources I am using (starting November 2019, so current) to l
 
 I will be adding to this list as I learn more and putting in review comments and code samples as I go.
 
-I'll be using [Markdown](https://en.wikipedia.org/wiki/Markdown) to write this. You can find a good reference for that [here]( https://www.markdownguide.org).
+I've also added links to a few other resources which, whilst not directly Python related, will be useful whilst putting together a Python program using a web frontend and for managing code etc.
+
 ## Tools
 ### Python
 Before you can do anything with Python you need to install it. Python is cross-platform (can run on macOS, Windows, Linux and Docker) and you can download it from [here](https://www.python.org/downloads/).
@@ -34,3 +35,10 @@ Data visualization is the graphical representation of data in order to interacti
 Machine Learning can be an incredibly beneficial tool to uncover hidden insights and predict future trends. [This Machine Learning with Python course](https://www.edx.org/course/machine-learning-with-python-a-practical-introduction) will give you all the tools you need to get started with supervised and unsupervised learning.
 ### Python for Everybody (freeCodeCamp)
 [This course](https://www.freecodecamp.org/news/python-for-everybody/) aims to teach everyone the basics of programming computers using Python 3. The course has no pre-requisites and anyone with moderate computer experience should be able to master the materials in this course.
+## Non-Python Related Topics
+### Markdown
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is used to write this page. You can find a good reference for that [here]( https://www.markdownguide.org).
+### The HTML Handbook
+[This handbook](https://www.freecodecamp.org/news/the-html-handbook/) on HTML is aimed at two types of audience. First, the beginner. I explain HTML from zero in a succinct but comprehensive way, so you can use this book to learn HTML from the basics. Then, the professional. HTML is often considered like a secondary thing to learn. It might be taken for granted. Yet lots of things are obscure to many people. This handbook aids a basic understanding of the topic. Even if you don't write HTML in your day to day work, knowing how HTML works can help save you some headaches when you need to understand it from time to time, for example while tweaking a web page.
+### GitHub
+[This](https://medium.com/swlh/git-manual-for-beginners-7932a6523d2f) is a good [GitHub](http://www.github.com/) manal for beginners.
