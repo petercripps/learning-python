@@ -42,3 +42,5 @@ Machine Learning can be an incredibly beneficial tool to uncover hidden insights
 [This handbook](https://www.freecodecamp.org/news/the-html-handbook/) on HTML is aimed at two types of audience. First, the beginner. I explain HTML from zero in a succinct but comprehensive way, so you can use this book to learn HTML from the basics. Then, the professional. HTML is often considered like a secondary thing to learn. It might be taken for granted. Yet lots of things are obscure to many people. This handbook aids a basic understanding of the topic. Even if you don't write HTML in your day to day work, knowing how HTML works can help save you some headaches when you need to understand it from time to time, for example while tweaking a web page.
 ### GitHub
 [This](https://medium.com/swlh/git-manual-for-beginners-7932a6523d2f) is a good [GitHub](http://www.github.com/) manal for beginners.
+### Project Ideas
+[Here's a resource](https://www.freecodecamp.org/news/the-secret-to-unlimited-project-ideas/) to help you come up wth unlimited ideas for your coding projects.
