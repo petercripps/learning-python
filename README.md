@@ -30,7 +30,7 @@ In [this course](https://www.edx.org/course/python-basics-for-data-science-3) pr
 In [this course](https://www.edx.org/course/analyzing-data-with-python), you will learn how to analyze data in Python using multi-dimensional arrays in numpy, manipulate DataFrames in pandas, use SciPy library of mathematical routines, and perform machine learning using scikit-learn!
 ### Visualizing Data with Python (edX)
 Data visualization is the graphical representation of data in order to interactively and efficiently convey insights to clients, customers, and stakeholders in general. In [this course](https://www.edx.org/course/visualizing-data-with-python), you will learn how to leverage a software tool to visualize data that will also enable you to extract information, better understand the data, and make more effective decisions.
-### Machine Learning with Python: A Practical Introduction
+### Machine Learning with Python: A Practical Introduction (edX)
 Machine Learning can be an incredibly beneficial tool to uncover hidden insights and predict future trends. [This Machine Learning with Python course](https://www.edx.org/course/machine-learning-with-python-a-practical-introduction) will give you all the tools you need to get started with supervised and unsupervised learning.
-### Python for Everybody
+### Python for Everybody (freeCodeCamp)
 [This course](https://www.freecodecamp.org/news/python-for-everybody/) aims to teach everyone the basics of programming computers using Python 3. The course has no pre-requisites and anyone with moderate computer experience should be able to master the materials in this course.
