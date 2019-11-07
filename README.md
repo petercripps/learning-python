@@ -5,8 +5,10 @@ I will be adding to this list as I learn more and putting in review comments and
 
 I'll be using [Markdown](https://en.wikipedia.org/wiki/Markdown) to write this. You can find a good reference for that here: https://www.markdownguide.org.
 ## Tools
+### Python
+Before you can do anything with Python you need to install it. Python is cross-platform (can run on macOS, Windows, Linux and Docker) and you can download it from here: https://www.python.org/downloads/,
 ### Python Extension for Visual Studio Code
-A [Visual Studio Code](https://code.visualstudio.com) extension with rich support for the Python language (for all actively supported versions of the language: 2.7, >=3.5), including features such as IntelliSense, linting, debugging, code navigation, code formatting, Jupyter notebook support, refactoring, variable explorer, test explorer, snippets, and more!
+In order to do anything with Python you'll need an Integrated Development Environment with extensions that support Python. A [Visual Studio Code](https://code.visualstudio.com) extension with rich support for the Python language (for all actively supported versions of the language: 2.7, >=3.5), including features such as IntelliSense, linting, debugging, code navigation, code formatting, Jupyter notebook support, refactoring, variable explorer, test explorer, snippets, and more!
 https://marketplace.visualstudio.com/items?itemName=ms-python.python
 ## WebSites
 ### Python.org
