@@ -5,6 +5,8 @@ I will be adding to this list as I learn more and putting in review comments and
 
 I've also added links to a few other resources which, whilst not directly Python related, will be useful whilst putting together a Python program using a web frontend and for managing code etc.
 
+Scroll to the end to get the curriculum I've put together to use these resources.
+
 ## Tools
 ### Python
 Before you can do anything with Python you need to install it. Python is cross-platform (i.e. can run on macOS, Windows, Linux and Docker) and you can download it from [here](https://www.python.org/downloads/).
@@ -48,3 +50,8 @@ If you're looking for a fun way to practice Python, start [here](https://www.fre
 [This](https://medium.com/swlh/git-manual-for-beginners-7932a6523d2f) is a good [GitHub](http://www.github.com/) manual for beginners.
 ### Project Ideas
 [Here's a resource](https://www.freecodecamp.org/news/the-secret-to-unlimited-project-ideas/) to help you come up wth unlimited ideas for your coding projects.
+## Curriculum
+Here's a curriculum I've put together and am following:
+1. Install Python for your environemnt as well as an IDE with any extensions you need.
+2. Do a complete course. I did _The Python Mega Course: Build 10 Real World Applications_ from [Udemy](https://www.udemy.com) which I got at a dramatically reduced price (£21.99 instead of £199.99). There is also a [free course] (https://www.freecodecamp.org/news/python-for-everybody/) though.
+3. Use a reference like [this](https://developers.google.com/edu/python/) to supplement your learning.
