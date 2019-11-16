@@ -20,7 +20,7 @@ The open source site for Python is [here](https://www.python.org).
 ### Python Documentation
 Python Documentation (at [python.org](https://www.python.org)) can be found [here](https://docs.python.org/3/contents.html).
 ### Google's Python Class
-Google's Python Class -- [this](https://developers.google.com/edu/python/) is a free class for people with a little bit of programming experience who want to learn Python. The class includes written materials, lecture videos, and lots of code exercises to practice Python coding.
+[Google's Python Class](https://developers.google.com/edu/python/) is a free class for people with a little bit of programming experience who want to learn Python. The class includes written materials, lecture videos, and lots of code exercises to practice Python coding.
 ## Courses (Paid)
 ### The Python Mega Course: Build 10 Real World Applications (Udemy)
 Start Python from the basics and learn how to create 10 amazing and professional Python programs used in the real world! This course is on [Udemy](https://www.udemy.com). This is a paid for class (watch ot for offers/discounts) you can get [here](https://www.udemy.com/course/the-python-mega-course/learn/lecture/15491824).
