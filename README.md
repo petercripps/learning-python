@@ -39,6 +39,8 @@ Machine Learning can be an incredibly beneficial tool to uncover hidden insights
 [This course](https://www.freecodecamp.org/news/python-for-everybody/) aims to teach everyone the basics of programming computers using Python 3. The course has no pre-requisites and anyone with moderate computer experience should be able to master the materials in this course.
 ### Learn Python by Building 5 Games (freeCodeCamp)
 If you're looking for a fun way to practice Python, start [here](https://www.freecodecamp.org/news/learn-python-by-building-5-games/). You'll build Tetris, Pong, Snake, Connect Four, and even an online multiplayer game. Each game tutorial includes a working example codebase.
+### Learn How to Use Tkinter to Create GUIs in Python
+Tkinter makes it simple to create a GUI which handles user input and output. The GUI uses a form of object oriented programming called "event-driven" which means that the program responds to events, which are actions that a user takes. [This 5.5 hour class] (https://www.freecodecamp.org/news/learn-how-to-use-tkinter-to-create-guis-in-python/) is a comprehensive course about how to use Tkinter available for free on the freeCodeCamp.org YouTube channel.
 ## Non-Python Related Topics
 ### Markdown
 [Markdown](https://en.wikipedia.org/wiki/Markdown) is used to write this page. You can find a good reference for that [here]( https://www.markdownguide.org).
