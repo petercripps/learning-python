@@ -26,6 +26,8 @@ Python Documentation (at [python.org](https://www.python.org)) can be found [her
 Start Python from the basics and learn how to create 10 amazing and professional Python programs used in the real world! This course is on [Udemy](https://www.udemy.com). This is a paid for class (watch ot for offers/discounts) you can get [here](https://www.udemy.com/course/the-python-mega-course/learn/lecture/15491824).
 ### Programming for Everybody - Getting Started with Python (Coursera)
 [This course](https://www.coursera.org/learn/python?specialization=python) aims to teach everyone the basics of programming computers using Python. We cover the basics of how one constructs a program from a series of simple instructions in Python.  The course has no pre-requisites and avoids all but the simplest mathematics. Anyone with moderate computer experience should be able to master the materials in this course. 
+### Complete Python Bootcamp: Go from zero to hero in Python 3 Udemy)
+[This course](https://www.udemy.com/course/complete-python-bootcamp/) aims to get you learn Python like a professional. Starting from the basics it goes all the way to creating your own applications and games.
 ## Courses (Free)
 ### Python Basics for Data Science (edX)
 In [this course](https://www.edx.org/course/python-basics-for-data-science-3) provides a beginner-friendly introduction to Python for Data Science. Practice through lab exercises, and you'll be ready to create your first Python scripts on your own!
