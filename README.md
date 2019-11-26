@@ -31,6 +31,8 @@ Start Python from the basics and learn how to create 10 amazing and professional
 [This course](https://www.coursera.org/learn/python?specialization=python) aims to teach everyone the basics of programming computers using Python. We cover the basics of how one constructs a program from a series of simple instructions in Python.  The course has no pre-requisites and avoids all but the simplest mathematics. Anyone with moderate computer experience should be able to master the materials in this course. 
 ### Complete Python Bootcamp: Go from zero to hero in Python 3 Udemy)
 [This course](https://www.udemy.com/course/complete-python-bootcamp/) aims to get you learn Python like a professional. Starting from the basics it goes all the way to creating your own applications and games.
+### 100 Days of Code in Python
+[This course](https://training.talkpython.fm/courses/explore_100days_in_python/100-days-of-code-in-python) provides both instruction as well as code challenges over 100 days teaching you to be a successful Python programmer. The course is 1-part video lesson, 2-parts guided projects that teaches you many Python technologies and libraries.
 
 ## Courses (Free)
 ### Python Basics for Data Science (edX)
