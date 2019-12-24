@@ -5,6 +5,8 @@ I will be adding to this list as I learn more and putting in review comments and
 
 I've also added links to a few other resources which, whilst not directly Python related, will be useful whilst putting together a Python program using a web frontend and for managing code etc.
 
+You can find some Python code examples built during my learning [here](code).
+
 Scroll to the end to get the curriculum I've put together to use these resources.
 
 ## Tools
