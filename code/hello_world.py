@@ -1,3 +1,3 @@
 # The first program everyone starts with
-msg = "Hello World"
+msg = "Hello, World"
 print(msg)

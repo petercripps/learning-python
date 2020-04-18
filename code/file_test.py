@@ -1,3 +1,6 @@
+# Opening a file using with statement, read from one file
+# and write to another
+
 def read_file(myfile):
     file = open(myfile)
     content = file.read()
@@ -12,9 +15,6 @@ def char_count(ch, myfile):
 
 read_file("file.txt")
 print(char_count('a',"file.txt"))
-
-# Opening a file using with statement, read from one file
-# and write to another
 
 with open("file.txt", "r") as myfile:
     content = myfile.read()

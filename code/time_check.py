@@ -1,3 +1,5 @@
+# Use date and time to check if within working hours.
+
 from datetime import datetime as dt
 start_hour = 8
 end_hour = 22
