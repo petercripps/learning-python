@@ -9,11 +9,15 @@ You can find some Python code examples built during my learning [here](code).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
+## Last Update (18th April 2020)
+- Added new free online course [Learn Data Analysis with Python](https://www.freecodecamp.org/news/learn-data-analysis-with-python-course/) 
+- Added [Python Guide for Beginners](https://www.freecodecamp.org/news/the-python-guide-for-beginners/)
+
 ## Tools
 ### Python
 Before you can do anything with Python you need to install it. Python is cross-platform (i.e. can run on macOS, Windows, Linux and Docker) and you can download it from [here](https://www.python.org/downloads/).
 ### Python Extension for Visual Studio Code
-In order to do anything practical with Python you'll need an Integrated Development Environment with extensions that support the language. A [Visual Studio Code](https://code.visualstudio.com) (VSC) extension with rich support for the Python language (for all actively supported versions of the language: 2.7, >=3.5), including features such as IntelliSense, linting, debugging, code navigation, code formatting, Jupyter notebook support, refactoring, variable explorer, test explorer, snippets, and more! The VSC extension for Python can be downloaded from within VSC or from [here](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
+In order to do anything practical with Python you'll need an Integrated Development Environment with extensions that support the language. A [Visual Studio Code](https://code.visualstudio.com) (VSC) extension with rich support for the Python language (for all actively supported versions of the language: 2.7, >= 3.5), including features such as IntelliSense, linting, debugging, code navigation, code formatting, Jupyter notebook support, refactoring, variable explorer, test explorer, snippets, and more! The VSC extension for Python can be downloaded from within VSC or from [here](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 
 Once you have VSC and the Python extension installed you can test everthing works by building a `Hello World` program following [these instructions](https://code.visualstudio.com/docs/python/python-tutorial).
 ### Jupyter Project
@@ -27,11 +31,11 @@ Python Documentation (at [python.org](https://www.python.org)) can be found [her
 ### Google's Python Class
 [Google's Python Class](https://developers.google.com/edu/python/) is a free class for people with a little bit of programming experience who want to learn Python. The class includes written materials, lecture videos, and lots of code exercises to practice Python coding.
 ### The Python Guide for Beginners (freeCodeCamp)
-[This Python Guide for Beginners](https://www.freecodecamp.org/news/the-python-guide-for-beginners/) allows you to learn the core of the language in a matter of hours instead of weeks.
+This [Python Guide for Beginners](https://www.freecodecamp.org/news/the-python-guide-for-beginners/) allows you to learn the core of the language in a matter of hours instead of weeks.
 
 ## Courses (Paid)
 ### The Python Mega Course: Build 10 Real World Applications (Udemy)
-Start Python from the basics and learn how to create 10 amazing and professional Python programs used in the real world! This course is on [Udemy](https://www.udemy.com). This is a paid for class (watch ot for offers/discounts) you can get [here](https://www.udemy.com/course/the-python-mega-course/learn/lecture/15491824).
+Start Python from the basics and learn how to create 10 amazing and professional Python programs used in the real world! This course is on [Udemy](https://www.udemy.com). This is a paid for class (watch out for offers/discounts) you can get [here](https://www.udemy.com/course/the-python-mega-course/learn/lecture/15491824).
 ### Programming for Everybody - Getting Started with Python (Coursera)
 [This course](https://www.coursera.org/learn/python?specialization=python) aims to teach everyone the basics of programming computers using Python. We cover the basics of how one constructs a program from a series of simple instructions in Python.  The course has no pre-requisites and avoids all but the simplest mathematics. Anyone with moderate computer experience should be able to master the materials in this course. 
 ### Complete Python Bootcamp: Go from zero to hero in Python 3 Udemy)
