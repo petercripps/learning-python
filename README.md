@@ -9,8 +9,8 @@ You can find some Python code examples built during my learning [here](code).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
-## Last Update (20th April 2020)
-- Added information on installing and running Jupyter Notebook.
+## Last Update (24th April 2020)
+- Updated 'Curriculum' to 'Learning Approach'.
 
 ## Tools
 ### Python
@@ -105,7 +105,7 @@ Learn Data Analysis with Python. [This free course](https://www.freecodecamp.org
 ## Learning Approach
 Here's a learning approach I've put together which works for me.
 1. Install Python for your environemnt as well as an IDE with any extensions you need.
-2. Install [Jupyter Notebook]().
+2. Install [Jupyter Notebook](https://jupyter.org/index.html).
 3. Do a complete course. I did _The Python Mega Course: Build 10 Real World Applications_ from [Udemy](https://www.udemy.com) which I got at a dramatically reduced price (£21.99 instead of £199.99). There are also numerous free courses such as [](https://www.freecodecamp.org/news/python-for-everybody/) though.
 4. Look specifically at data analysis. For example try [Learn Data Analysis with Python](https://www.freecodecamp.org/news/learn-data-analysis-with-python-course/) which is free
 5. Use a reference like [this](https://developers.google.com/edu/python/) to supplement your learning.
