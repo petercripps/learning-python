@@ -9,8 +9,8 @@ You can find some Python code examples built during my learning [here](code).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
-## Last Update (24th April 2020)
-- Updated 'Curriculum' to 'Learning Approach'.
+## Last Update (26th April 2020)
+- Added pupulation dataset to covid19 program.
 
 ## Tools
 ### Python
