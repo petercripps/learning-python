@@ -11,6 +11,7 @@ Scroll to the end to get the curriculum I've put together to use these resources
 
 ## Last Update (26th April 2020)
 - Added pupulation dataset to covid19 program.
+- Added link to w3schools.com Python Tutorial.
 
 ## Tools
 ### Python
@@ -46,6 +47,9 @@ Python Documentation (at [python.org](https://www.python.org)) can be found [her
 
 ### The Python Guide for Beginners (freeCodeCamp)
 This [Python Guide for Beginners](https://www.freecodecamp.org/news/the-python-guide-for-beginners/) allows you to learn the core of the language in a matter of hours instead of weeks.
+
+### w3schools.com Python Tutorial
+The w3schools.com Pyhthon tutorial can be found [here](https://www.w3schools.com/python/default.asp).
 
 ## Courses (Paid)
 ### The Python Mega Course: Build 10 Real World Applications (Udemy)
