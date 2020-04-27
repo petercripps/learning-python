@@ -6,7 +6,7 @@
 import pandas as pd
 import sys
 
-# Format and print the dataframe
+# Format and print the dataframe.
 def print_covid_data(df):
     if df.empty:
         print("Invalid or missing argument")
@@ -22,25 +22,29 @@ def print_covid_data(df):
         print("Recovered: ", "{:,}".format(int(df.values[0][6])))
         print("Deaths: ", "{:,}".format(int(df.values[0][7])))
 
-# Print help
+# Print help.
 def print_help():
-    print("Parameters -c <country> -p <province> -d <date>")
-    print("country: String containing valid country name")
-    print("province: String containing valid province name")
-    print("date: String containing date in form yyyy-mm-dd")
+    print("Usage: covid19.py -c <country> -p <province> -d <date>")
+    print("Where:")
+    print("<country> (required): String containing valid country name e.g. 'United Kingdom'")
+    print("<province> (optional): String containing valid province name e.g. 'Bermuda'")
+    print("<date> (required): String containing date in form yyyy-mm-dd e.g. '2020-03-31'")
 
-# Read command line arguments
+# Read command line arguments.
 def read_args():
-    date = "NaN"
-    country = "NaN"
-    province = "NaN"
+    date = ""
+    country = ""
+    province = ""
     numargs = len(sys.argv)
     index = 1
     
     if numargs == 1:
+        # No arguments so print help
         print_help()
+        return []
     elif sys.argv[index] == '-h':
         print_help()
+        return []
     else:
         while index < numargs:
             try:
@@ -60,7 +64,32 @@ def read_args():
             index = index + 2       
     return [country, province, date]
 
-# Return population of country for year
+# Return COVID-19 data for country, province and date.
+def covid_data(country, province, date):
+    df4 = pd.DataFrame()
+    if (country != "") and (date != ""):
+        
+        # Read dataset as a panda dataframe
+        df1 = pd.read_csv('covid19.csv')
+
+        # Get subset of data for specified country/region
+        df2 = df1[df1["Country/Region"] == country]
+
+        # Get subset of data for specified date
+        df3 = df2[df2["Date"] == date]
+
+        # Get subset of data for specified province. If none specified and there
+        # are provinces dataframe will contain all with first one being country
+        # and province as 'NaN'
+        if province == "":
+            df4 = df3[df3['Province/State'].str.contains(province, na=True)]
+        else:
+            df4 = df3[df3['Province/State'].str.contains(province, na=False)]
+
+    # Return selected covid data from last subset
+    return df4
+
+# Return population of country for year.
 def population_size(country, year):
     try:
         # Read dataset as a panda dataframe
@@ -79,29 +108,20 @@ def population_size(country, year):
 
 # Read command line args 
 args = read_args()
+if args:
 
-if (args[0] != "NaN") and (args[2] != "NaN"):
-    # Read dataset as a panda dataframe
-    df1 = pd.read_csv('covid19.csv')
+    # Get covid dataframe
+    df = covid_data(args[0],args[1],args[2])
 
-    # Get subset of data for specified country/region
-    df2 = df1[df1["Country/Region"] == args[0]]
+    # Print data if dataframe not empty
+    if not df.empty:
 
-    # Get subset of data for specified date
-    df3 = df2[df2["Date"] == args[2]]
+        # Print selected covid data from last subset
+        print_covid_data(df)
 
-    # Get subset of data for specified province (including if none specified)
-    if args[1] == "NaN":
-        df4 = df3[df3['Province/State'].str.contains(args[1], na=True)]
+        # Get and print country population size for 2018 (latest year data available)
+        pop_sz = population_size(args[0], 2018)
+        if pop_sz > 0:
+            print("Population: ", "{:,}".format(pop_sz))
     else:
-        df4 = df3[df3['Province/State'].str.contains(args[1], na=False)]
-
-    # Print selected covid data from last subset
-    print_covid_data(df4)
-    
-    # Get and print country population size for 2018 (latest year data available)
-    pop_sz = population_size(args[0], 2018)
-    if pop_sz > 0:
-        print("Population: ", "{:,}".format(pop_sz))
-else:
-    print("Missing argument")
+        print("Missing or invalid argument(s)")
