@@ -6,6 +6,9 @@
 import pandas as pd
 import sys
 
+# Defines absolute or relative path to where datasets are found.
+path = "../../../datasets/"
+
 # Format and print the dataframe.
 def print_covid_data(df):
     if df.empty:
@@ -70,7 +73,7 @@ def covid_data(country, province, date):
     if (country != "") and (date != ""):
         
         # Read dataset as a panda dataframe
-        df1 = pd.read_csv('covid19.csv')
+        df1 = pd.read_csv(path + 'covid19.csv')
 
         # Get subset of data for specified country/region
         df2 = df1[df1["Country/Region"] == country]
@@ -93,7 +96,7 @@ def covid_data(country, province, date):
 def population_size(country, year):
     try:
         # Read dataset as a panda dataframe
-        pop_df = pd.read_csv('population.csv')
+        pop_df = pd.read_csv(path + 'population.csv')
     
         # Get data for particular country
         df1 = pop_df[pop_df["Country Name"] == country]

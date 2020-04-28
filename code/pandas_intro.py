@@ -5,19 +5,33 @@
 
 import pandas
 
-# Create a pandas dataframe with test data. Create column names then then print it
-df1 = pandas.DataFrame([["Smith","0897",60000],["Jones","0208",50350],
-    ["Timpson","0233",75000],["Jackson","0972",67250], 
-    ["Wilks","0073",90000],["Hendrix","031",65150]],
+# Create a pandas dataframe with test data. Create column names then print the dataframe
+df1 = pandas.DataFrame([["Smith","0897",60000.00],["Jones","0208",50350.00],
+    ["Timpson","0233",75000.00],["Jackson","0972",67250.00],
+    ["O'Neil","0143",65000.25],["Thompson","0822",57550.00],
+    ["Beveridge","0935",75000.00],["Davies","0002",107250.00],
+    ["Shah","0555",85000.00],["O'Rourke","0112",30250.00], 
+    ["Wilks","0073",90000.50],["Hendrix","0031",65150.75]],
     columns=["Surname","ID","Salary"])
 print(df1)
 
+# Set these to 'True' to get info
+# Print datatypes
+if False:
+    print(df1.dtypes)
+
 # What's the datatype of df1 and df1.Salary?
-print("Type is: ",type(df1))
-print("Type is: ",type(df1.Salary))
+if False:
+    print("Type is: ",type(df1))
+    print("Type is: ",type(df1.Salary))
+
+# Provide a full summary of stats
+if False:
+    print(df1.describe(include="all"))
 
 # Simple analysis of Salary
-print("Mean salary: ", df1.Salary.mean())
-print("Max salary: ", df1.Salary.max())
-print("Min salary: ", df1.Salary.min())
-print("Median salary: ", df1.Salary.median())
+if False:
+    print("Mean salary: ", df1.Salary.mean())
+    print("Max salary: ", df1.Salary.max())
+    print("Min salary: ", df1.Salary.min())
+    print("Median salary: ", df1.Salary.median())
