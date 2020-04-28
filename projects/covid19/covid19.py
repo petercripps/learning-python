@@ -9,8 +9,8 @@ import sys
 # Defines absolute or relative path to where datasets are found.
 path = "../../../datasets/"
 
-# Format and print the dataframe.
-def print_covid_data(df):
+# Format and print the dataframe and population data.
+def print_covid_data(df, pop_sz):
     if df.empty:
         print("Invalid or missing argument")
     else:    
@@ -24,6 +24,11 @@ def print_covid_data(df):
         print("Confirmed: ", "{:,}".format(int(df.values[0][5])))
         print("Recovered: ", "{:,}".format(int(df.values[0][6])))
         print("Deaths: ", "{:,}".format(int(df.values[0][7])))
+        if pop_sz > 0:
+            print("Population: ", "{:,}".format(pop_sz))
+            print("Deaths/Head of Population: ", round(df.values[0][7]/pop_sz, 5)*100,"%")
+        else:
+            print("Population: Unknown")
 
 # Print help.
 def print_help():
@@ -119,12 +124,10 @@ if args:
     # Print data if dataframe not empty
     if not df.empty:
 
-        # Print selected covid data from last subset
-        print_covid_data(df)
-
         # Get and print country population size for 2018 (latest year data available)
         pop_sz = population_size(args[0], 2018)
-        if pop_sz > 0:
-            print("Population: ", "{:,}".format(pop_sz))
+        
+        # Print selected covid data
+        print_covid_data(df, pop_sz)
     else:
         print("Missing or invalid argument(s)")
