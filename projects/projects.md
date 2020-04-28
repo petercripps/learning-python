@@ -10,8 +10,9 @@ In each case download tha data (as CSV) into the files as named into a folder an
 
 Usage is as follows:
 
-`covid19.py -c <country> -p <province> -d <date>")
+`covid19.py -c <country> -p <province> -d <date>")'
+
 Where:
 <country> (required): String containing valid country name e.g. 'United Kingdom')
 <province> (optional): String containing valid province name e.g. 'Bermuda')
-<date> (required): String containing date in form yyyy-mm-dd e.g. '2020-03-31')`
+<date> (required): String containing date in form yyyy-mm-dd e.g. '2020-03-31')
