@@ -10,7 +10,7 @@ In each case download tha data (as CSV) into the files as named into a folder an
 
 Usage is as follows:
 
-`covid19.py -c <country> -p <province> -d <date>")'
+`covid19.py -c <country> -p <province> -d <date>")`
 
 Where:
 <country> (required): String containing valid country name e.g. 'United Kingdom')
