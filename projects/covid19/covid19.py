@@ -26,7 +26,7 @@ def print_covid_data(df, pop_sz):
         print("Deaths: ", "{:,}".format(int(df.values[0][7])))
         if pop_sz > 0:
             print("Population: ", "{:,}".format(pop_sz))
-            print("Deaths/Head of Population: ", round(df.values[0][7]/pop_sz, 5)*100,"%")
+            print(f'Deaths/Head of Population: {round(df.values[0][7]/pop_sz, 5)*100}%')
         else:
             print("Population: Unknown")
 

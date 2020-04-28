@@ -6,11 +6,11 @@ covid19.csv is [this file](https://pkgstore.datahub.io/core/covid-19/time-series
 
 population.csv is [this file](https://pkgstore.datahub.io/core/population/population_csv/data/e23cbc93dc1e8b8814ed62d73fc36c33/population_csv.csv) that can be found here: https://datahub.io/core/population.
 
-In each case download tha data (as CSV) into the files as named into a folder and set the path to the folder in the variable `path`.
+In each case download the data (as CSV) into the files as named into a folder and set the path to the folder in the variable `path`. This variable is defined at the top of covid19.py.
 
 Usage is as follows:
 
-`covid19.py -c <country> -p <province> -d <date>")`
+`covid19.py -c <country> -p <province> -d <date>`
 
 Where:
 - `country` (required): String containing valid country name e.g. 'United Kingdom')
