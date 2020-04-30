@@ -2,6 +2,8 @@
 # https://datahub.io/docs/about
 # COVID-19 is specifically available here:
 # https://datahub.io/core/covid-19
+# Population data is specifically available here:
+# https://datahub.io/core/population
 
 import pandas as pd
 import sys
@@ -26,7 +28,8 @@ def print_covid_data(df, pop_sz):
         print("Deaths: ", "{:,}".format(int(df.values[0][7])))
         if pop_sz > 0:
             print("Population: ", "{:,}".format(pop_sz))
-            print(f'Deaths/Head of Population: {round(df.values[0][7]/pop_sz, 5)*100}%')
+            divisor = pop_sz/100000
+            print("Deaths/100,000:", round(df.values[0][7]/divisor, 2))
         else:
             print("Population: Unknown")
 
@@ -34,9 +37,9 @@ def print_covid_data(df, pop_sz):
 def print_help():
     print("Usage: covid19.py -c <country> -p <province> -d <date>")
     print("Where:")
-    print("<country> (required): String containing valid country name e.g. 'United Kingdom'")
-    print("<province> (optional): String containing valid province name e.g. 'Bermuda'")
-    print("<date> (required): String containing date in form yyyy-mm-dd e.g. '2020-03-31'")
+    print("-c <country> (required): String containing valid country name e.g. 'United Kingdom'")
+    print("-p <province> (optional): String containing valid province name e.g. 'Bermuda'")
+    print("-d <date> (required): String containing date in form yyyy-mm-dd e.g. '2020-03-31'")
 
 # Read command line arguments.
 def read_args():

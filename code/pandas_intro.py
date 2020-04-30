@@ -16,6 +16,11 @@ df1 = pandas.DataFrame([["Smith","0897",60000.00],["Jones","0208",50350.00],
 print(df1)
 
 # Set these to 'True' to get info
+
+# Print first 3 rows
+if False:
+    print(df1.head(3))
+
 # Print datatypes
 if False:
     print(df1.dtypes)
@@ -35,3 +40,11 @@ if False:
     print("Max salary: ", df1.Salary.max())
     print("Min salary: ", df1.Salary.min())
     print("Median salary: ", df1.Salary.median())
+
+# Iterate over column headers
+# For more ways of iterating see: https://pythonbasics.org/pandas-iterate-dataframe/
+if False:
+    for column_name in df1:
+        print(type(column_name))
+        print(column_name)
+        print('------\n')    
