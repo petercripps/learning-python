@@ -9,9 +9,8 @@ You can find some Python code examples built during my learning [here](code).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
-## Last Update (28th April 2020)
-- Updates to documentation on projects.
-- Added links data files used.
+## Last Update (1st May 2020)
+- Additions to COVID-19 data (deaths/100,000, deaths as a percentage of cases).
 
 ## Tools
 ### Python

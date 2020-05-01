@@ -23,13 +23,17 @@ def print_covid_data(df, pop_sz):
             print("Province: No province") 
         else:
             print("Province: ", df.values[0][2])
-        print("Confirmed: ", "{:,}".format(int(df.values[0][5])))
+        confirmed = int(df.values[0][5])
+        deaths = int(df.values[0][7])
+        print("Confirmed: ", "{:,}".format(confirmed))
         print("Recovered: ", "{:,}".format(int(df.values[0][6])))
-        print("Deaths: ", "{:,}".format(int(df.values[0][7])))
+        print("Deaths: ", "{:,}".format(deaths))
         if pop_sz > 0:
             print("Population: ", "{:,}".format(pop_sz))
             divisor = pop_sz/100000
+            print("Confirmed/100,000:", round(df.values[0][5]/divisor, 2))
             print("Deaths/100,000:", round(df.values[0][7]/divisor, 2))
+            print("Percent Deaths/Confirmed:", round((deaths/confirmed)*100, 2))
         else:
             print("Population: Unknown")
 
