@@ -10,32 +10,44 @@ import sys
 
 # Defines absolute or relative path to where datasets are found.
 path = "../../../datasets/"
+debug = False
+
+# Use this dictionary for difference between population dataset (key) and covid dataset (value)
+# Name in population dataset is the one that must be used in argument list
+alternatives = {"United States": "US",
+                "Syrian Arab Republic": "Syria"}
 
 # Format and print the dataframe and population data.
 def print_covid_data(df, pop_sz):
     if df.empty:
         print("Invalid or missing argument")
-    else:    
-        print("Date: ", df.values[0][0])
-        print("Country: ", df.values[0][1])
-        # If no province specified cell will be null
-        if pd.isnull(df.values[0][2]):
-            print("Province: No province") 
-        else:
-            print("Province: ", df.values[0][2])
-        confirmed = int(df.values[0][5])
-        deaths = int(df.values[0][7])
-        print("Confirmed: ", "{:,}".format(confirmed))
-        print("Recovered: ", "{:,}".format(int(df.values[0][6])))
-        print("Deaths: ", "{:,}".format(deaths))
-        if pop_sz > 0:
-            print("Population: ", "{:,}".format(pop_sz))
-            divisor = pop_sz/100000
-            print("Confirmed/100,000:", round(df.values[0][5]/divisor, 2))
-            print("Deaths/100,000:", round(df.values[0][7]/divisor, 2))
-            print("Percent Deaths/Confirmed:", round((deaths/confirmed)*100, 2))
-        else:
-            print("Population: Unknown")
+    else:
+        try:    
+            print("Date: ", df.values[0][0])
+            print("Country: ", df.values[0][1])
+            
+            # If no province specified cell will be null
+            if pd.isnull(df.values[0][2]):
+                print("Province: No province") 
+            else:
+                print("Province: ", df.values[0][2])
+            confirmed = int(df.values[0][5])
+            deaths = int(df.values[0][7])
+            print("Confirmed: ", "{:,}".format(confirmed))
+            print("Recovered: ", "{:,}".format(int(df.values[0][6])))
+            print("Deaths: ", "{:,}".format(deaths))
+            if pop_sz > 0:
+                print("Population: ", "{:,}".format(pop_sz))
+                divisor = pop_sz/100000
+                print("Confirmed/100,000:", round(df.values[0][5]/divisor, 2))
+                print("Deaths/100,000:", round(df.values[0][7]/divisor, 2))
+                print("Percent Deaths/Confirmed:", round((deaths/confirmed)*100, 2))
+            else:
+                print("Population: Unknown")
+        except ValueError:
+            print("Inappropriate argument value")
+        except:
+            print("Invalid or missing argument")
 
 # Print help.
 def print_help():
@@ -46,38 +58,38 @@ def print_help():
     print("-d <date> (required): String containing date in form yyyy-mm-dd e.g. '2020-03-31'")
 
 # Read command line arguments.
-def read_args():
-    date = ""
-    country = ""
-    province = ""
-    numargs = len(sys.argv)
-    index = 1
+def read_args(args):
+    argdict = {"country": "", "province": "", "date": ""}
     
-    if numargs == 1:
-        # No arguments so print help
+    # If no arguments return empty dict
+    if len(args) == 1:
+        print("No arguments provided, try using '-h'")
+        return argdict
+    
+    # If first argument is -h print help and return empty dict
+    if args[1] == '-h':
         print_help()
-        return []
-    elif sys.argv[index] == '-h':
-        print_help()
-        return []
-    else:
-        while index < numargs:
-            try:
-                arg = sys.argv[index]
-                if arg == '-c':
-                    country = str(sys.argv[index+1])
-                elif arg == '-p':
-                    province = str(sys.argv[index+1])
-                elif arg == '-d':
-                    date = str(sys.argv[index+1])
-                else:
-                    print("Invalid argument: ", arg)
-            except IndexError:
-                print("Invalid number of arguments")
-            except:
-                print("Input error")
-            index = index + 2       
-    return [country, province, date]
+        return argdict
+    
+    # Read arguments
+    try:
+        i = 1
+        while i < len(args):    
+            if args[i] == '-c':
+                argdict["country"] = args[i + 1]
+                i += 1
+            elif args[i] == '-p':
+                argdict["province"] = args[i + 1]
+                i += 1   
+            elif args[i] == '-d':
+                argdict["date"] = args[i + 1]
+                i += 1
+            else:
+                print("Unknown argument", args[i])
+            i += 1    
+    except IndexError:
+        print("Invalid or missing argument")
+    return argdict
 
 # Return COVID-19 data for country, province and date.
 def covid_data(country, province, date):
@@ -88,6 +100,9 @@ def covid_data(country, province, date):
         df1 = pd.read_csv(path + 'covid19.csv')
 
         # Get subset of data for specified country/region
+        if country in alternatives:
+            country = alternatives[country]
+
         df2 = df1[df1["Country/Region"] == country]
 
         # Get subset of data for specified date
@@ -105,7 +120,7 @@ def covid_data(country, province, date):
     return df4
 
 # Return population of country for year.
-def population_size(country, year):
+def pop_size(country, year):
     try:
         # Read dataset as a panda dataframe
         pop_df = pd.read_csv(path + 'population.csv')
@@ -117,24 +132,27 @@ def population_size(country, year):
     except:
         return 0
 
-#####################
-# Program starts here
-#####################
+#######################
+# Program starts here #
+#######################
 
-# Read command line args 
-args = read_args()
-if args:
+# Read command line args. 
+args = read_args(sys.argv)
+if debug:
+    print(args)
+if (args["country"] != "" and args["date"] != ""):
 
     # Get covid dataframe
-    df = covid_data(args[0],args[1],args[2])
+    df = covid_data(args["country"],args["province"],args["date"])
 
     # Print data if dataframe not empty
     if not df.empty:
-
+        if debug:
+            print(df)
         # Get and print country population size for 2018 (latest year data available)
-        pop_sz = population_size(args[0], 2018)
+        pop_sz = pop_size(args["country"], 2018)
         
         # Print selected covid data
         print_covid_data(df, pop_sz)
     else:
-        print("Missing or invalid argument(s)")
+        print("Invalid or missing argument")

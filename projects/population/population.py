@@ -2,7 +2,6 @@
 # https://datahub.io/docs/about
 # Population data is specifically available here:
 # https://datahub.io/core/population
-# See https://plotly.com/dash/ for creating dashboards
 
 import pandas as pd
 import sys
