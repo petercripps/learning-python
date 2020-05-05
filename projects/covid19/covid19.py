@@ -9,10 +9,10 @@ import pandas as pd
 import sys
 
 # Defines absolute or relative path to where datasets are found.
-path = "../../../datasets/"
+path = "/Users/petercripps/Code/Python/Learning/datasets/"
 debug = False
 
-# Use this dictionary for difference between population dataset (key) and covid dataset (value)
+# Use this dictionary for differences between population dataset (key) and covid dataset (value)
 # Name in population dataset is the one that must be used in argument list
 alternatives = {"United States": "US",
                 "Syrian Arab Republic": "Syria"}
@@ -95,27 +95,28 @@ def read_args(args):
 def covid_data(country, province, date):
     df4 = pd.DataFrame()
     if (country != "") and (date != ""):
-        
-        # Read dataset as a panda dataframe
-        df1 = pd.read_csv(path + 'covid19.csv')
+        try:
+            # Read dataset as a panda dataframe
+            df1 = pd.read_csv(path + 'covid19.csv')
 
-        # Get subset of data for specified country/region
-        if country in alternatives:
-            country = alternatives[country]
+            # Get subset of data for specified country/region
+            if country in alternatives:
+                country = alternatives[country]
 
-        df2 = df1[df1["Country/Region"] == country]
+            df2 = df1[df1["Country/Region"] == country]
 
-        # Get subset of data for specified date
-        df3 = df2[df2["Date"] == date]
+            # Get subset of data for specified date
+            df3 = df2[df2["Date"] == date]
 
-        # Get subset of data for specified province. If none specified and there
-        # are provinces dataframe will contain all with first one being country
-        # and province as 'NaN'
-        if province == "":
-            df4 = df3[df3['Province/State'].str.contains(province, na=True)]
-        else:
-            df4 = df3[df3['Province/State'].str.contains(province, na=False)]
-
+            # Get subset of data for specified province. If none specified and there
+            # are provinces dataframe will contain all with first one being country
+            # and province as 'NaN'
+            if province == "":
+                df4 = df3[df3['Province/State'].str.contains(province, na=True)]
+            else:
+                df4 = df3[df3['Province/State'].str.contains(province, na=False)]
+        except FileNotFoundError:
+            print("Invalid file or path")
     # Return selected covid data from last subset
     return df4
 
@@ -129,7 +130,8 @@ def pop_size(country, year):
         df1 = pop_df[pop_df["Country Name"] == country]
         df2 = df1[df1["Year"] == year]
         return df2['Value'].values[0]
-    except:
+    except FileNotFoundError:
+        print("Invalid file or path")
         return 0
 
 #######################

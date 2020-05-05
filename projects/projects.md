@@ -13,9 +13,9 @@ Usage is as follows:
 `covid19.py -c <country> -p <province> -d <date>`
 
 Where:
-- `country` (required): String containing valid country name e.g. 'United Kingdom'
-- `province` (optional): String containing valid province name e.g. 'Bermuda'
-- `date` (required): String containing date in form yyyy-mm-dd e.g. '2020-03-31'
+- `-c country` (required): String containing valid country name e.g. 'United Kingdom'
+- `-p province` (optional): String containing valid province name e.g. 'Bermuda'
+- `-d date` (required): String containing date in form yyyy-mm-dd e.g. '2020-03-31'
 
 ### population
 Prints population by year (in the range 1960 to 2018).
@@ -25,6 +25,19 @@ Usage is as follows:
 `population.py -c <country> -f <date> -t <date>`
 
 Where:
-- `-c country` (required): String containing valid country name e.g. 'United Kingdom'
-- `-f year` (required): Integer containing from year in form yyyy e.g. 1960
-- `-t year` (required): Integer containing to date in form yyyy e.g. 2020
+- `-c <country>` (required): String containing valid country name e.g. 'United Kingdom'
+- `-f <year>` (required): Integer containing from year in form yyyy e.g. 1960
+- `-t <year>` (required): Integer containing to date in form yyyy e.g. 2020
+
+### covidrates
+Analyses death rates over a range of dates giving daily increase/decrease.
+
+Usage is as follows:
+
+`covidrates.py -c <country> -p <province> -f <date> -t <date>`
+
+Where:
+- `-c <country>` (required): String containing valid country name e.g. 'United Kingdom'
+- `-p <province>` (optional): String containing valid province name e.g. 'Bermuda'
+- `-f <date>` (required): String containing from date in form yyyy-mm-dd e.g. '2020-03-31'
+`-t <date>` (required): String containing to date in form yyyy-mm-dd e.g. '2020-04-30'

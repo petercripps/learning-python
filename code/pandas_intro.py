@@ -13,9 +13,11 @@ df1 = pandas.DataFrame([["Smith","0897",60000.00],["Jones","0208",50350.00],
     ["Shah","0555",85000.00],["O'Rourke","0112",30250.00], 
     ["Wilks","0073",90000.50],["Hendrix","0031",65150.75]],
     columns=["Surname","ID","Salary"])
-print(df1)
 
 # Set these to 'True' to get info
+
+if False:
+    print(df1)
 
 # Print first 3 rows
 if False:
@@ -41,10 +43,27 @@ if False:
     print("Min salary: ", df1.Salary.min())
     print("Median salary: ", df1.Salary.median())
 
+# Select a single column 'Salary' and print each entry
+if False:
+    print(type(df1['Salary']))
+    for entry in df1['Salary']:
+        print(entry)
+
 # Iterate over column headers
 # For more ways of iterating see: https://pythonbasics.org/pandas-iterate-dataframe/
 if False:
     for column_name in df1:
         print(type(column_name))
         print(column_name)
-        print('------\n')    
+        print('------\n')  
+
+# Iterate over rows using iterrows()
+if False:
+    for row_index, row in df1.iterrows():
+        print(type(row))
+        print(row_index, row, sep='\n')
+
+# Iterate over rows using iterrows()
+if False:
+    for row in df1.itertuples():
+        print(row)
