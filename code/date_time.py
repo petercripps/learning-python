@@ -9,3 +9,8 @@ if 8 < timenow.hour < 22:
     print("It is during work hours")
 else:
     print("It is outside work hours")
+
+date_str = '29/12/2017' # The date - 29 Dec 2017
+format_str = '%d/%m/%Y' # The format
+datetime_obj = dt.strptime(date_str, format_str)
+print(datetime_obj.date())

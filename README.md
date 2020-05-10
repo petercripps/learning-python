@@ -9,8 +9,8 @@ You can find some Python code examples built during my learning [here](code).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
-## Last Update (2nd May 2020)
-- Updates to COVID-19 project.
+## Last Update (7th May 2020)
+- Started new section on data analysis and visualisation tools.
 
 ## Tools
 ### Python
@@ -88,6 +88,16 @@ use Tkinter available for free on the freeCodeCamp.org YouTube channel.
 
 ### Learn Data Analysis with Python (freeCodeCamp)
 Learn Data Analysis with Python. [This free course](https://www.freecodecamp.org/news/learn-data-analysis-with-python-course/) covers SQL, NumPy, Pandas, Matplotlib, and other tools for visualizing data and creating reports. We also include Jupyter Notebooks so you can run the code yourself, along with plenty of exercises to reinforce your understanding of the concepts.
+
+## Data Analysis and Visualisation
+### PyData
+[PyData[(https://pydata.org)] provides a forum for the international community of users and developers of data analysis tools to share ideas and learn from each other.
+
+### Seaborn
+[Seaborn](https://seaborn.pydata.org/index.html) is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
+
+### Bokeh
+[Bokeh](https://bokeh.org) is an interactive visualization library for modern web browsers. It provides elegant, concise construction of versatile graphics, and affords high-performance interactivity over large or streaming datasets. Bokeh can help anyone who would like to quickly and easily make interactive plots, dashboards, and data applications.
 
 ## Non-Python Related Topics
 ### Markdown

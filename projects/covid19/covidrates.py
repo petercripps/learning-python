@@ -9,6 +9,7 @@ import sys
 
 # Defines absolute or relative path to where datasets are found.
 path = "/Users/petercripps/Code/Python/Learning/datasets/"
+
 # Set this to True to print out debug info.
 debug = False
 
