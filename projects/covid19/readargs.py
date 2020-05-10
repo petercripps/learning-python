@@ -1,5 +1,5 @@
 # Read command line arguments.
-
+import sys
 from help import print_help
 
 valid_ops = ["info", "rate", "compare"]
@@ -57,3 +57,8 @@ def read_args(args):
     except IndexError:
         print("Invalid or missing argument")
     return argdict
+
+if __name__ == "__main__":
+    # execute only if run as a script
+    args = read_args(sys.argv)
+    print(args)
