@@ -31,17 +31,17 @@ Options are:<br>
 If no parameters are provided the program will look for a file called 'covid19.yaml' and will read data from that.
 An example of this file is:<br>
 
-  countries:
-    - United Kingdom
-    - Spain'
-    - Italy`
-  operation: rate
-  `date: '2020-03-01'
-  `graph: False
-  `fdate: '2020-02-01'
-  `tdate: '2020-05-09'
-  `province: ""
-  `rate: absolute
+  countries:<br>
+    - United Kingdom<br>
+    - Spain<br>
+    - Italy<br>
+  operation: rate<br>
+  `date: '2020-03-01'<br>
+  `graph: False<br>
+  `fdate: '2020-02-01'<br>
+  `tdate: '2020-05-09'<br>
+  `province: ""<br>
+  `rate: absolute<br>
 
 operation must be one of: info | rate<br>
 rate must be one of absolure | hundred | million<br>
