@@ -8,8 +8,8 @@ population.csv that can be found here: https://datahub.io/core/population.
 
 In each case download the data (as CSV) into the files as named into a folder and set the path to the folder in the variable path. This variable is defined at the top of covid19.py.
 
-General usage: 
-covid19.py info | rate | compare [options]<br>
+General usage:<br> 
+`covid19.py info | rate | compare [options]`<br>
 
 info shows general COVID-19 data for a given country.<br> 
 
@@ -49,11 +49,10 @@ rate must be one of absolure | hundred | million<br>
 ### population
 Prints population by year (in the range 1960 to 2018).<br>
 
-Usage is as follows:<br>
+General usage:<br>
+`population.py [options]`<br>
 
-population.py [options]<br>
-
-Options are:
+Options are:<br>
 -c <country> (required): String containing valid country name e.g. 'United Kingdom'<br>
 -f <year> (required): Integer containing from year in form yyyy e.g. 1960<br>
 -t <year> (required): Integer containing to date in form yyyy e.g. 2020<br>
