@@ -12,36 +12,59 @@ General usage:
 `covid19.py info | rate | compare [options]`
 
 `info` shows general COVID-19 data for a given country. 
-Options are: 
+
+Options are:
+
 `-c <country>` (required):    String containing valid country name e.g. 'United Kingdom'
+
 `-p <province>` (optional):   String containing valid province name e.g. 'Bermuda'
+
 `-d <date>` (required):       String containing date in form yyyy-mm-dd e.g. '2020-03-31'
 
+
 `rate` shows death rate increase/decrease per day between a date range
+
 Options are: 
+
 `-c <country>` (required):    String containing valid country name e.g. 'United Kingdom'
+
 `-p <province>` (optional):   String containing valid province name e.g. 'Bermuda'
+
 `-f <date>` (required):       String containing from date in form yyyy-mm-dd e.g. '2020-03-31'
+
 `-t <date>` (required):       String containing to date in form yyyy-mm-dd e.g. '2020-03-31'
+
 `-g` (optional):              Draws a graph of the data
+
 `-r` (optional): absolute | hundred | million specifies how death rate is calculated, absolute number, per hundred thousand or per million
 
 If no parameters are provided the program will look for a file called 'covid19.yaml' and will read data from that.
 An example of this file is:
 
 `countries:`
+
   `- United Kingdom`
+
   `- Spain`
+
   `- Italy`
+
 `operation: rate`
+
 `date: '2020-03-01'`
+
 `graph: False`
+
 `fdate: '2020-02-01'`
+
 `tdate: '2020-05-09'`
+
 `province: ""`
+
 `rate: absolute`
 
 `operation` must be one of: info | rate
+
 `rate` must be one of absolure | hundred | million
 
 ### population
