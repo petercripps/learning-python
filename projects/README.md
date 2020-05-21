@@ -36,11 +36,11 @@ An example of this file is:<br>
     - Spain<br>
     - Italy<br>
   operation: rate<br>
-  date: '2020-03-01'<br>
-  graph: False<br>
-  fdate: '2020-02-01'<br>
-  tdate: '2020-05-09'<br>
+  date: "2020-03-01"<br>
+  fdate: "2020-02-01"<br>
+  tdate: "2020-05-09"<br>
   province: ""<br>
+  graph: False<br>
   rate: absolute<br>
 
 operation must be one of: info | rate<br>
