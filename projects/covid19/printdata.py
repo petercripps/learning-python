@@ -1,4 +1,5 @@
 import pandas as pd
+from calcdata import calc_death_rates
 
 # Format and print the dataframe and population data.
 def print_covid_info(df, pop_sz):
@@ -30,10 +31,10 @@ def print_covid_info(df, pop_sz):
         except ValueError:
             print("Inappropriate argument value")
         except:
-            print("Unknown error occurred")
+            print("An error occurred")
 
-# Format and print the dataframe for death rate.
-def print_covid_rate(df):
+# Format and print the dataframe for death rate for a single country.
+def print_covid_country_rate(df):
     if df.empty:
         print("Invalid or missing argument")
     else:
@@ -47,25 +48,16 @@ def print_covid_rate(df):
                 print("Province: ", df.values[0][2])
 
             # Print date, number of deaths on that day and change over previous day
-            # Change is calculated by subtracting current day from previous days deaths
-            # pdeaths is previous days deaths to allow change calculation
-            pdeaths = 0
-            first = True
-            for deaths, date in zip(df['Deaths'], df['Date']):
-                if first:
-                    # First time through just record previous days deaths, nothing to print for rate
-                    pdeaths = deaths
-                    first = False
-                    print(f"Date: {date}, Deaths: {deaths}")
-                else:
-                    # All subsequent times through calcualte death rate increase/decrease over previous day
-                    if pdeaths == 0:
-                        change = 0
-                    else:
-                        change = deaths - pdeaths
-                    print("Date: ",date, "Deaths: ", "{:,}".format(int(deaths)), "Change: ", "{:,}".format(int(change)))
-                    pdeaths = deaths
+            death_rates = calc_death_rates(df)
+            for death_rate in death_rates:
+                print("Date:", death_rate[0], "Deaths: ", "{:,}".format(int(death_rate[1])), "Change: ", "{:,}".format(int(death_rate[2])))
         except ValueError:
             print("Inappropriate argument value")
         except:
             print("An error occured")
+
+# Format and print the dataframe for death rate for multipe countries.
+def print_covid_rate(country_data, rate):
+    if country_data != []:
+        for df in country_data:
+            print_covid_country_rate(df)

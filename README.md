@@ -9,9 +9,8 @@ You can find some Python code examples built during my learning [here](code).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
-## Last Update (10th May 2020)
-- Refactored covid19 project into multiple .py files.
-- Added graphs using [bokeh](https://bokeh.org).
+## Last Update (21st May 2020)
+- Added YAML files for data entry.
 
 ## Tools
 ### Python

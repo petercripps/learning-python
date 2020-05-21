@@ -1,41 +1,35 @@
 # Read command line arguments.
 import sys
+import yaml
 from help import print_help
 
-valid_ops = ["info", "rate", "compare"]
-argdict = {"operation": "",
-    "country": "", 
-    "province": "", 
-    "date": "",
-    "fdate": "",
-    "tdate": "",
-    "graph": False}
+valid_ops = ["info", "rate"]
 
 def read_args(args):
+    argdict =init_argdict()
     
-    # If no arguments return empty dict
+    # If no arguments see if there is a YAML file
     if len(args) == 1:
-        print("No arguments provided, try using '-h'")
-        return argdict
-    
-    # If first argument is -h print help and return empty dict. Otherwise should be
-    # the operation so check if a valid operation is provided and carry on otherwise
-    # first argument is invalid so return an empty dict.
-    if args[1] == '-h':
+        argdict = read_yaml_file("covid19.yaml")
+        print("No arguments provided so using YAML")
+    # If first argument is -h print help and return empty dict.
+    elif args[1] == '-h':
         print_help()
-        return argdict
+        return {}
+    # Check if first argument is a valid operation and carry on otherwise
+    # first argument is invalid so return an empty dict.
     elif args[1] in valid_ops:
         argdict["operation"] = args[1]
     else:
-        print("Invailid argument")
-        return argdict
+        print(f"Invalid argument: {args[1]}")
+        return {}
     
     # Read remaining arguments starting at second argument
     try:
         i = 2
         while i < len(args):    
             if args[i] == '-c':
-                argdict["country"] = args[i + 1]
+                argdict["countries"].append(args[i + 1])
                 i += 1
             elif args[i] == '-p':
                 argdict["province"] = args[i + 1]
@@ -51,12 +45,35 @@ def read_args(args):
                 i += 1
             elif args[i] == '-g':
                 argdict["graph"] = True
+            elif args[i] == '-r':
+                argdict["rate"] = args[i + 1]
+                i += 1
             else:
                 print("Unknown argument", args[i])
             i += 1    
     except IndexError:
         print("Invalid or missing argument")
     return argdict
+
+# Initialise the dictionary containing arguments.
+def init_argdict():
+        return {"operation": "",
+            "countries": [], 
+            "province": "", 
+            "date": "",
+            "fdate": "",
+            "tdate": "",
+            "graph": False,
+            "rate": 'absolute'}
+
+def read_yaml_file(yfile):
+    try:
+        with open(yfile) as f:
+            data = yaml.load(f, Loader=yaml.FullLoader)
+        return data
+    except:
+        print("YAML file error")
+        return {}
 
 if __name__ == "__main__":
     # execute only if run as a script

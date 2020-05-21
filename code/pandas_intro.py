@@ -37,7 +37,8 @@ if False:
     print(df1.describe(include="all"))
 
 # Simple analysis of Salary
-if False:
+if True:
+    print("Sum salary: ", df1.Salary.sum())
     print("Mean salary: ", df1.Salary.mean())
     print("Max salary: ", df1.Salary.max())
     print("Min salary: ", df1.Salary.min())

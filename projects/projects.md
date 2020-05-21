@@ -23,9 +23,26 @@ Options are:
 `-p <province>` (optional):   String containing valid province name e.g. 'Bermuda'
 `-f <date>` (required):       String containing from date in form yyyy-mm-dd e.g. '2020-03-31'
 `-t <date>` (required):       String containing to date in form yyyy-mm-dd e.g. '2020-03-31'
-`-g (optional)`               Draws a graph of the data
+`-g` (optional):              Draws a graph of the data
+`-r` (optional): absolute | hundred | million specifies how death rate is calculated, absolute number, per hundred thousand or per million
 
-`compare` not currently implemented.
+If no parameters are provided the program will look for a file called 'covid19.yaml' and will read data from that.
+An example of this file is:
+
+`countries:
+  - United Kingdom
+  - Spain
+  - Italy
+operation: rate
+date: '2020-03-01'
+graph: False
+fdate: '2020-02-01'
+tdate: '2020-05-09'
+province: ""
+rate: absolute`
+
+'operation' must be one of: info | rate
+'rate' must be one of absolure | hundred | million
 
 ### population
 Prints population by year (in the range 1960 to 2018).
