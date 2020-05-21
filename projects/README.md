@@ -29,20 +29,20 @@ Options are:
 If no parameters are provided the program will look for a file called 'covid19.yaml' and will read data from that.
 An example of this file is:
 
-`countries:
-  - United Kingdom
-  - Spain
-  - Italy
-operation: rate
-date: '2020-03-01'
-graph: False
-fdate: '2020-02-01'
-tdate: '2020-05-09'
-province: ""
-rate: absolute`
+`countries:`
+  `- United Kingdom`
+  `- Spain`
+  `- Italy`
+`operation: rate`
+`date: '2020-03-01'`
+`graph: False`
+`fdate: '2020-02-01'`
+`tdate: '2020-05-09'`
+`province: ""`
+`rate: absolute`
 
-'operation' must be one of: info | rate
-'rate' must be one of absolure | hundred | million
+`operation` must be one of: info | rate
+`rate` must be one of absolure | hundred | million
 
 ### population
 Prints population by year (in the range 1960 to 2018).

@@ -122,4 +122,4 @@ Here's a learning approach I've put together which works for me.
 3. Do a complete course. I did _The Python Mega Course: Build 10 Real World Applications_ from [Udemy](https://www.udemy.com) which I got at a dramatically reduced price (£21.99 instead of £199.99). There are also numerous free courses such as [](https://www.freecodecamp.org/news/python-for-everybody/) though.
 4. Look specifically at data analysis. For example try [Learn Data Analysis with Python](https://www.freecodecamp.org/news/learn-data-analysis-with-python-course/) which is free
 5. Use a reference like [this](https://developers.google.com/edu/python/) to supplement your learning.
-6. Do an actual project to enhance your learning. Check out some of my projects [here](projects/projects.md).
+6. Do an actual project to enhance your learning. Check out some of my projects [here](projects/README.md).
