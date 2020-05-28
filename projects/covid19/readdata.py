@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import datetime as dt
 
 # Defines absolute or relative path to where datasets are found.
 path = "/Users/petercripps/Code/Python/Learning/datasets/"
@@ -49,7 +50,7 @@ def covid_info_data(country, province, date):
 
 # Return COVID-19 rate data for multiple countries and a from date to date.
 # Returns an array of pandas dataframes, one for each country.
-def covid_rate_data(countries, fdate, tdate):
+def covid_rate_data1(countries, fdate, tdate):
     df4 = pd.DataFrame()
     country_data = []
     if (countries != []) and (fdate != "") and (tdate != ""):
@@ -69,6 +70,55 @@ def covid_rate_data(countries, fdate, tdate):
                     # Get subset of data for date range
                     df4 = df3.loc[(df3["Date"] >= fdate) & (df3["Date"] <= tdate)]
                     country_data.append(df4)
+        except FileNotFoundError:
+            print("Invalid file or path")
+    else:
+        print("Invalid or missing argument")
+    return country_data
+
+# Return COVID-19 rate data for multiple countries and a from date to date.
+# Returns an array of pandas dataframes, one for each country.
+def covid_rate_data(countries, fdate, tdate):
+    country_data = []
+    if (countries != []) and (fdate != "") and (tdate != ""):
+        try:
+            # Read dataset as a panda dataframe
+            df_all = pd.read_csv(path + coviddata)
+            for country in countries:
+                
+                # Get subset of data for specified country/region
+                df_country = df_all[df_all["Country/Region"] == country]
+
+                # Get subset of data for date range
+                df_date = df_country.loc[(df_country["Date"] >= fdate) & (df_country["Date"] <= tdate)]
+
+                if country in no_country_data:
+                    # Country data is split across all provinces. Create a new data frame by summing the 
+                    # key data from each of the provinces of this country for every date between fdate and tdate. 
+                    # Other fields can be set to 0 or NaN. Note we start at tdate and go backwards n order to get
+                    # data frames in ascending order.
+                    date = tdate
+                    df_final = pd.DataFrame()
+                    while date != fdate: 
+                        # Get all provinces for first date
+                        df_one_date = df_date.loc[(df_date["Date"] == date)]
+                        # Sum the data from each province into a new temp data frame
+                        df_temp = pd.DataFrame([[date, country,np.NaN,0,0,df_one_date.Confirmed.sum(),df_one_date.Recovered.sum(),df_one_date.Deaths.sum()]],columns=list(df_all))
+                        df_final = pd.concat([df_temp, df_final])
+                        date = inc_date(date,-1)
+                    # Get last entry
+                    df_one_date = df_date.loc[(df_date["Date"] == date) ]
+                    df_temp = pd.DataFrame([[date, country,np.NaN,0,0,df_one_date.Confirmed.sum(),df_one_date.Recovered.sum(),df_one_date.Deaths.sum()]],columns=list(df_all))
+                    df_final = pd.concat([df_temp, df_final])
+                    country_data.append(df_final)
+                else:
+                    # Ignore provinces.
+                    df_final = df_date[df_date["Province/State"].isnull()]
+                    
+                    if df_final.empty:
+                        print(f"Country level data not available for {country}")
+                    else:
+                        country_data.append(df_final)
         except FileNotFoundError:
             print("Invalid file or path")
     else:
@@ -95,6 +145,13 @@ def pop_data(country, year):
         print("Invalid file or path")
         return 0
 
+# Takes a date as a string, increments it by amt and returns new date (as a string)
+# Format assumed is '%Y-%m-%d'
+def inc_date(date, amt):
+    date_time_obj = dt.datetime.strptime(date, '%Y-%m-%d') 
+    date_time_obj += dt.timedelta(days=amt)
+    return date_time_obj.strftime('%Y-%m-%d')
+
 ##########################
 # Test program starts here
 ##########################
@@ -102,13 +159,15 @@ if __name__ == "__main__":
     # execute only if run as a script
     print("Testing...")
     country1 = "China"
-    country2 = "Germany"
-    date1 = "2020-05-10"
-    date2 = "2020-05-14"
+    country2 = "Australia"
+    date1 = "2020-04-23"
+    date2 = "2020-04-25"
     
     if False:
-        print(covid_info_data(country1, "", date1))
+        print(covid_info_data(country2, "", date1))
     if False:
-        print(covid_rate_data([country1], date1, date2))
+        print(covid_rate_data([country1, country2], date1, date2))
     if False:
         print(pop_data(country1, 2018))
+    if False:
+        print(inc_date("2020-05-29",1))

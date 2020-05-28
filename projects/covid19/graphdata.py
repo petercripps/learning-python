@@ -44,11 +44,13 @@ def graph_covid_rate(country_data, rate):
         i = 0
         for y, country in zip(multi_y, countries):
             if i < len(line_colors):
-                p.line(x, y, legend_label="COVID-19 Deaths for "+country, line_width=4, line_color=line_colors[i])
+                p.line(x, y, legend_label=country, line_width=2, line_color=line_colors[i])
                 i += 1
             else:
                 print(f"Cannot plot more than {len(line_colors)} line colors")
         p.xaxis.major_label_orientation = 3/4
+        # p.add_layout(legend, 'right')
+        # https://stackoverflow.com/questions/26254619/position-of-the-legend-in-a-bokeh-plot
 
         # show the results
         show(p)

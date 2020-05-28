@@ -31,4 +31,4 @@ province: ""
 rate: absolute
 
 'operation' must be one of: info | rate
-'rate' must be one of absolure | hundred | million
+'rate' must be one of absolute | hundred | million

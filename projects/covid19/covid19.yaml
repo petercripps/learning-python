@@ -6,11 +6,12 @@ countries:
   - Germany
   - Sweden
   - US
-  - New Zealand
+  - China
+  - Australia
 operation: rate
 date: '2020-03-01'
 graph: True
 fdate: '2020-03-01'
-tdate: '2020-05-19'
+tdate: '2020-05-26'
 province: ""
-rate: hundred
+rate: absolute

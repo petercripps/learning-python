@@ -44,7 +44,7 @@ An example of this file is:<br>
   rate: absolute<br>
 
 operation must be one of: info | rate<br>
-rate must be one of absolure | hundred | million<br>
+rate must be one of absolute | hundred | million<br>
 
 ### population
 Prints population by year (in the range 1960 to 2018).<br>
