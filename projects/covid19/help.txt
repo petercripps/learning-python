@@ -13,7 +13,9 @@ Options are:
 -f <date> (required):       String containing from date in form yyyy-mm-dd e.g. '2020-03-31'
 -t <date> (required):       String containing to date in form yyyy-mm-dd e.g. '2020-03-31'
 -g (optional)               Draws a graph of the data
--r (optional) absolute | hundred | million Specifies how death rate is calculated, absolute number, per hundred thousand or per million
+-r (optional) absolute | hundred | million | change Specifies how death rate is calculated, absolute number, 
+                                                    per hundred thousand, per million or change since previous day
+-m (optional) Confirmed | Recovered | Deaths        Specifies what is being measured
 
 If no parameters are provided the program will look for a file called 'covid19.yaml' and will read data from that.
 An example of this file is:
@@ -29,6 +31,8 @@ fdate: '2020-02-01'
 tdate: '2020-05-09'
 province: ""
 rate: absolute
+measure: Deaths
 
 'operation' must be one of: info | rate
-'rate' must be one of absolute | hundred | million
+'rate' must be one of: absolute | hundred | million | change
+'measure' must be one of: Confirmed | Recovered | Deaths

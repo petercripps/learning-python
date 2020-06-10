@@ -1,11 +1,22 @@
+import pandas as pd
 from datetime import datetime as dt
 from bokeh.plotting import figure, output_file, show
 from bokeh.models import DatetimeTickFormatter
-from calcdata import calc_proportional_death_rate
+from calcdata import calc_proportional_rate, calc_rates
 
-# Create a line graph of COVID-19 death rates for each country specified between the given dates.
-# Rate can be specified as an absolute or as per 100,000 or per 1,000,000
-def graph_covid_rate(country_data, rate):
+# Create a line graph of COVID-19 rates for each country specified between the given dates.
+# Up to 15 countries can be plotted (but only constrained by number of line colours)
+# Parameters: 
+# country_data : list
+#   An array of covid19 Pandas dataframes, one for each country.
+# rate : str 
+#   Defines how rate should be calculated: 'absolute', 'hundred', 'million' or 'change'
+# measure : str
+#   Defines what number is being measured: 'Confirmed', 'Recovered' or 'Deaths'
+# Returns:
+# None
+
+def graph_covid_rate(country_data, rate, measure):
     x = []
     multi_y = []
     countries = []
@@ -18,16 +29,23 @@ def graph_covid_rate(country_data, rate):
             date_obj = dt.strptime(date, "%Y-%m-%d")
             x.append(date_obj)
 
-        # Get each country death rate for multi y-axes
+        # Get each country rate number for multi y-axes
         for df in country_data:
             countries.append(df.values[0][1])
-            y = []
-            for deaths in df['Deaths']:
-                if rate == 'hundred' or rate == 'million':
-                    prop_deaths = calc_proportional_death_rate(deaths, df.values[0][1],rate)
-                    y.append(prop_deaths)
-                else:    
-                    y.append(deaths) 
+            y = []  
+            if rate == 'change':
+                change = calc_rates(df, measure)
+                for i in change:
+                    y.append(i[2])
+            else:
+                for num in df[measure]:
+                    if rate == 'hundred' or rate == 'million':
+                        prop_num = calc_proportional_rate(num, df.values[0][1],rate)
+                        y.append(prop_num)
+                    elif rate == 'absolute':    
+                        y.append(num)
+                    else:
+                        print("Invalid rate: ", rate)     
             multi_y.append(y)
 
         # output to static HTML file
@@ -38,7 +56,9 @@ def graph_covid_rate(country_data, rate):
             rate_str = "per hundred thousand"
         elif rate == 'million': 
             rate_str = "per million"
-        p = figure(title="COVID-19 Deaths "+rate_str,plot_width=1200, plot_height=800, x_axis_label='Date', y_axis_label='Deaths', x_axis_type='datetime')
+        elif rate == 'change': 
+            rate_str = "change over previous day"    
+        p = figure(title="COVID-19 "+measure+" "+rate_str, plot_width=1200, plot_height=800, x_axis_label='Date', y_axis_label=measure, x_axis_type='datetime')
 
         # add a line renderer with legend and line thickness
         i = 0
@@ -56,3 +76,13 @@ def graph_covid_rate(country_data, rate):
         show(p)
     except IndexError: 
         print("Error building graph")
+
+##########################
+# Test program starts here
+##########################
+if __name__ == "__main__":
+    # execute only if run as a script
+    print("Testing...")
+    if True:
+        df = pd.read_csv("covid19test.csv")
+        graph_covid_rate([df], "absolute")

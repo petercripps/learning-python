@@ -8,12 +8,14 @@ coviddata = "covid19.csv"
 popdata = "population.csv"
 
 # Use this dictionary for differences between population dataset
-# Name in covid dataset is the one that must be used in argument list
+# and covid dataset. Name in covid dataset is the one that must be passed in
+# as an argument to this program.
 alternatives = {"US": "United States",
-                "Syria": "Syrian Arab Republic"}
+                "Syria": "Syrian Arab Republic",
+                "Russia": "Russian Federation"}
 # If a country is in this list then it has no data at the country level, only
 # for each of its provinces. Country level data must be derived therefore
-no_country_data = ["Australia", "China"]
+no_country_data = ["Australia", "China", "Canada"]
 
 # Return COVID-19 info for country, province and date.
 def covid_info_data(country, province, date):
@@ -50,39 +52,11 @@ def covid_info_data(country, province, date):
 
 # Return COVID-19 rate data for multiple countries and a from date to date.
 # Returns an array of pandas dataframes, one for each country.
-def covid_rate_data1(countries, fdate, tdate):
-    df4 = pd.DataFrame()
-    country_data = []
-    if (countries != []) and (fdate != "") and (tdate != ""):
-        try:
-            # Read dataset as a panda dataframe
-            df1 = pd.read_csv(path + coviddata)
-            for country in countries:
-                
-                # Get subset of data for specified country/region
-                df2 = df1[df1["Country/Region"] == country]
-                
-                # Ignore provinces.
-                df3 = df2[df2["Province/State"].isnull()]
-                if df3.empty:
-                    print(f"Country level data not available for {country}")
-                else:
-                    # Get subset of data for date range
-                    df4 = df3.loc[(df3["Date"] >= fdate) & (df3["Date"] <= tdate)]
-                    country_data.append(df4)
-        except FileNotFoundError:
-            print("Invalid file or path")
-    else:
-        print("Invalid or missing argument")
-    return country_data
-
-# Return COVID-19 rate data for multiple countries and a from date to date.
-# Returns an array of pandas dataframes, one for each country.
 def covid_rate_data(countries, fdate, tdate):
     country_data = []
     if (countries != []) and (fdate != "") and (tdate != ""):
         try:
-            # Read dataset as a panda dataframe
+            # Read dataset as a pandas data frame
             df_all = pd.read_csv(path + coviddata)
             for country in countries:
                 
@@ -95,7 +69,7 @@ def covid_rate_data(countries, fdate, tdate):
                 if country in no_country_data:
                     # Country data is split across all provinces. Create a new data frame by summing the 
                     # key data from each of the provinces of this country for every date between fdate and tdate. 
-                    # Other fields can be set to 0 or NaN. Note we start at tdate and go backwards n order to get
+                    # Other fields can be set to 0 or NaN. Note we start at tdate and go backwards in order to get
                     # data frames in ascending order.
                     date = tdate
                     df_final = pd.DataFrame()

@@ -91,7 +91,7 @@ Learn Data Analysis with Python. [This free course](https://www.freecodecamp.org
 
 ## Data Analysis and Visualisation
 ### PyData
-[PyData[(https://pydata.org)] provides a forum for the international community of users and developers of data analysis tools to share ideas and learn from each other.
+[PyData][(https://pydata.org) provides a forum for the international community of users and developers of data analysis tools to share ideas and learn from each other.
 
 ### Seaborn
 [Seaborn](https://seaborn.pydata.org/index.html) is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.

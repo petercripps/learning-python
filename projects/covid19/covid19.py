@@ -33,11 +33,11 @@ def covid19_rate(args):
 
         # Print data if dataframe not empty
         if country_data != []:
-            # Print covid data rates
-            print_covid_rate(country_data, args["rate"])
-            # Optionally create graph of covid rates
+            # Create a graph or print the data
             if args["graph"] == True:
-                graph_covid_rate(country_data, args["rate"])
+                graph_covid_rate(country_data, args["rate"], args["measure"])
+            else:
+                print_covid_rate(country_data, args["measure"])
         else:
             print("Invalid or missing argument")
     else:

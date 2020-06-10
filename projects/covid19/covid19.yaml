@@ -1,17 +1,19 @@
 countries:
-  - United Kingdom
-  - Spain
-  - Italy
   - France
   - Germany
-  - Sweden
+  - Italy
+  - United Kingdom
+  - Russia
   - US
+  - Canada
+  - Spain
   - China
-  - Australia
+  - Belgium
 operation: rate
-date: '2020-03-01'
+date: '2020-05-01'
 graph: True
-fdate: '2020-03-01'
-tdate: '2020-05-26'
+fdate: '2020-02-05'
+tdate: '2020-06-08'
 province: ""
-rate: absolute
+rate: hundred
+measure: Confirmed
