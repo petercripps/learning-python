@@ -9,8 +9,8 @@ You can find some Python code examples built during my learning [here](code).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
-## Last Update (21st May 2020)
-- Added YAML files for data entry.
+## Last Update (10th June 2020)
+- Added ability to track confirmed, recovered cases as well as deaths in Covid-19 project.
 
 ## Tools
 ### Python
