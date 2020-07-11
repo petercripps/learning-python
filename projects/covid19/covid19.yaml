@@ -9,11 +9,11 @@ countries:
   - Spain
   - China
   - Belgium
+  - Brazil
 operation: rate
-date: '2020-05-01'
 graph: True
 fdate: '2020-02-05'
-tdate: '2020-06-08'
+tdate: '2020-06-12'
 province: ""
 rate: hundred
-measure: Confirmed
+measure: Deaths

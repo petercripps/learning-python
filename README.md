@@ -9,8 +9,8 @@ You can find some Python code examples built during my learning [here](code).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
-## Last Update (10th June 2020)
-- Added ability to track confirmed, recovered cases as well as deaths in Covid-19 project.
+## Last Update (11th July 2020)
+- Added UI (appwindow.py) for entering data. Built using Tkinter.
 
 ## Tools
 ### Python
@@ -49,6 +49,9 @@ This [Python Guide for Beginners](https://www.freecodecamp.org/news/the-python-g
 
 ### w3schools.com Python Tutorial
 The w3schools.com Pyhthon tutorial can be found [here](https://www.w3schools.com/python/default.asp).
+
+## Full Stack Python
+An [open source book](https://www.fullstackpython.com) that explains the technical concepts in plain language to build web based applications.
 
 ## Courses (Paid)
 ### The Python Mega Course: Build 10 Real World Applications (Udemy)
@@ -98,6 +101,9 @@ Learn Data Analysis with Python. [This free course](https://www.freecodecamp.org
 
 ### Bokeh
 [Bokeh](https://bokeh.org) is an interactive visualization library for modern web browsers. It provides elegant, concise construction of versatile graphics, and affords high-performance interactivity over large or streaming datasets. Bokeh can help anyone who would like to quickly and easily make interactive plots, dashboards, and data applications.
+
+### Tkinter
+[Tkinter](https://www.geeksforgeeks.org/introduction-to-tkinter/) is the inbuilt python module that is used to create GUI applications. It is one of the most commonly used modules for creating GUI applications in Python as it is simple and easy to work with. An overview of the main Tkinter classes and methods can be found [here](https://www.tutorialspoint.com/python/python_gui_programming.htm).
 
 ## Non-Python Related Topics
 ### Markdown

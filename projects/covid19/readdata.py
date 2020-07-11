@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import datetime as dt
+import csv
 
 # Defines absolute or relative path to where datasets are found.
 path = "/Users/petercripps/Code/Python/Learning/datasets/"
@@ -9,7 +10,7 @@ popdata = "population.csv"
 
 # Use this dictionary for differences between population dataset
 # and covid dataset. Name in covid dataset is the one that must be passed in
-# as an argument to this program.
+# as an argument to this program and is the 'key' in this dictionary.
 alternatives = {"US": "United States",
                 "Syria": "Syrian Arab Republic",
                 "Russia": "Russian Federation"}
@@ -126,6 +127,15 @@ def inc_date(date, amt):
     date_time_obj += dt.timedelta(days=amt)
     return date_time_obj.strftime('%Y-%m-%d')
 
+# Read list of countries
+def country_data():
+    countries = []
+    with open('countries.txt', mode ='r') as file: 
+        lines = file.readlines()
+        for line in lines:
+            countries.append(line.strip())
+    return countries
+
 ##########################
 # Test program starts here
 ##########################
@@ -145,3 +155,5 @@ if __name__ == "__main__":
         print(pop_data(country1, 2018))
     if False:
         print(inc_date("2020-05-29",1))
+    if False:
+        print(country_data())

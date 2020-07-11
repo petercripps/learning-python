@@ -6,7 +6,7 @@ covid19.csv that can be found here: https://datahub.io/core/covid-19.
 
 population.csv that can be found here: https://datahub.io/core/population.
 
-In each case download the data (as CSV) into the files as named into a folder and set the path to the folder in the variable path. This variable is defined at the top of covid19.py.
+In each case download the data (as CSV) into the files as named into a folder and set the path to the folder in the variable path. This variable is defined at the top of covid19.py. There is also a basic UI for entering data that way. Just use appwindow.py.
 
 General usage:<br> 
 covid19.py info | rate | compare [options]<br>

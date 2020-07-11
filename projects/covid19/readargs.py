@@ -45,9 +45,9 @@ def read_args(args):
                 i += 1
             elif args[i] == '-p':
                 argdict["province"] = args[i + 1]
-                i += 1   
+                i += 1  
             elif args[i] == '-d':
-                argdict["date"] = args[i + 1]
+                argdict["fdate"] = args[i + 1]
                 i += 1
             elif args[i] == '-f':
                 argdict["fdate"] = args[i + 1]
@@ -83,10 +83,9 @@ def read_args(args):
 # None
 
 def init_argdict():
-    return {"operation": "", # One of: '' | info | rate
+    return {"operation": "info", # One of: '' | info | rate
         "countries": [], 
         "province": "", 
-        "date": "",
         "fdate": "",
         "tdate": "",
         "graph": False,
