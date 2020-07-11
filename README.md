@@ -1,11 +1,13 @@
 # Learning Python Resources
-This is a list of resources I am using (starting November 2019, so current) to learn [Python](https://www.python.org). Note that I am not a complete programming rookie but am somewhat rusty having not programmed professionaly for several years. These resources are generally aimed at someone who has some programming experience therefore.
+This is a list of resources I am using to learn [Python](https://www.python.org). Note that I am not a complete programming rookie but am somewhat rusty having not programmed professionaly for several years. These resources are generally aimed at someone who has some programming experience therefore.
 
 I will be adding to this list as I learn more and putting in review comments and code samples as I go.
 
 I've also added links to a few other resources which, whilst not directly Python related, will be useful whilst putting together a Python program using a web frontend and for managing code etc.
 
 You can find some Python code examples built during my learning [here](code).
+
+You can find projects I am working on [here](projects).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
@@ -88,6 +90,9 @@ If you're looking for a fun way to practice Python, start [here](https://www.fre
 ### Learn How to Use Tkinter to Create GUIs in Python (freeCodeCamp)
 Tkinter makes it simple to create a GUI which handles user input and output. The GUI uses a form of object oriented programming called "event-driven" which means that the program responds to events, which are actions that a user takes. [This 5.5 hour class](https://www.freecodecamp.org/news/learn-how-to-use-tkinter-to-create-guis-in-python/) is a comprehensive course about how to 
 use Tkinter available for free on the freeCodeCamp.org YouTube channel.
+
+### Create Standalone EXE Files with Python and Tkinter (Codemy)
+[This course](https://www.youtube.com/watch?v=QWqxRchawZY) describes how to create standalone EXE files in Python.
 
 ### Learn Data Analysis with Python (freeCodeCamp)
 Learn Data Analysis with Python. [This free course](https://www.freecodecamp.org/news/learn-data-analysis-with-python-course/) covers SQL, NumPy, Pandas, Matplotlib, and other tools for visualizing data and creating reports. We also include Jupyter Notebooks so you can run the code yourself, along with plenty of exercises to reinforce your understanding of the concepts.
