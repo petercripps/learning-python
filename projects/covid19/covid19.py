@@ -30,9 +30,9 @@ def covid19_info(argdict):
             # Print selected covid data
             print_covid_info(df, pop_sz)
         else:
-            print("Invalid or missing argument")
+            print(__file__, "Invalid or missing argument")
     else:
-        print("Invald country or date")
+        print(__file__, "Invald country or date")
 
 # Compare COVID-19 death rates between different countries and between from and to dates.
 def covid19_rate(argdict):
@@ -49,9 +49,9 @@ def covid19_rate(argdict):
             else:
                 print_covid_rate(country_data, argdict["measure"])
         else:
-            print("Invalid or missing argument")
+            print(__file__, "Invalid or missing argument")
     else:
-        print("Invald country or date")
+        print(__file__, "Invald country or date")
 
 ############################
 # Main program starts here #

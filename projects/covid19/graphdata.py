@@ -4,6 +4,11 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.models import DatetimeTickFormatter
 from calcdata import calc_proportional_rate, calc_rates
 
+# See https://docs.bokeh.org/en/latest/docs/reference/colors.html for colors    
+line_colors = ["darkblue","darkcyan","darkgoldenrod","darkgray","darkgreen","darkgrey","darkkhaki","darkmagenta","darkolivegreen","darkorange",
+    "darkorchid","darkred","darksalmon","darkseagreen","darkslateblue","darkslategray","darkslategrey","darkturquoise","darkviolet","deeppink",
+    "deepskyblue","dodgerblue","firebrick","forestgreen","fuchsia","gold","goldenrod","gray","green","honeydew","hotpink","indianred","indigo"]  
+
 # Create a line graph of COVID-19 rates for each country specified between the given dates.
 # Up to 15 countries can be plotted (but only constrained by number of line colours)
 # Parameters: 
@@ -21,17 +26,21 @@ def graph_covid_rate(country_data, rate, measure):
     multi_y = []
     countries = []
     rate_str = ""
-    line_colors = ["pink", "purple", "blue", "green", "orange", "red", "brown","plum", "peachpuff", "black", "turquoise", "darkgray", "darkseagreen", "lavendar", "yellow"]
     
     try:
         # First get dates which will be x-axis
         for date in country_data[0]['Date']: 
             date_obj = dt.strptime(date, "%Y-%m-%d")
             x.append(date_obj)
-
+        
+        # Print a status message
+        print("Working...")
         # Get each country rate number for multi y-axes
         for df in country_data:
             countries.append(df.values[0][1])
+            
+            # Print a status message
+            print(" ", df.values[0][1])
             y = []  
             if rate == 'change':
                 change = calc_rates(df, measure)
@@ -45,7 +54,7 @@ def graph_covid_rate(country_data, rate, measure):
                     elif rate == 'absolute':    
                         y.append(num)
                     else:
-                        print("Invalid rate: ", rate)     
+                        print(__file__, "Invalid rate: ", rate)     
             multi_y.append(y)
 
         # output to static HTML file
@@ -64,7 +73,7 @@ def graph_covid_rate(country_data, rate, measure):
         i = 0
         for y, country in zip(multi_y, countries):
             if i < len(line_colors):
-                p.line(x, y, legend_label=country, line_width=2, line_color=line_colors[i])
+                p.line(x, y, legend_label=country, line_width=4, line_color=line_colors[i])
                 i += 1
             else:
                 print(f"Cannot plot more than {len(line_colors)} line colors")
@@ -74,8 +83,10 @@ def graph_covid_rate(country_data, rate, measure):
 
         # show the results
         show(p)
+        # Print a status message
+        print("Complete")
     except IndexError: 
-        print("Error building graph")
+        print(__file__, "Error building graph")
 
 ##########################
 # Test program starts here
@@ -83,6 +94,6 @@ def graph_covid_rate(country_data, rate, measure):
 if __name__ == "__main__":
     # execute only if run as a script
     print("Testing...")
-    if True:
+    if False:
         df = pd.read_csv("covid19test.csv")
-        graph_covid_rate([df], "absolute")
+        graph_covid_rate([df], "hundred","Deaths")

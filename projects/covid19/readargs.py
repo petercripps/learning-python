@@ -7,7 +7,8 @@ valid_ops = ["info", "rate"]
 valid_rates = ["absolute", "hundred", "million", "change"]
 valid_measures = ["Deaths", "Confirmed", "Recovered"]
 
-# Reads a file in yaml format
+# Reads a list of arguments or, if none, a file in yaml format and returns
+# parameters in a dictionary.
 # Parameters:
 # args : list
 #   The command line arguments

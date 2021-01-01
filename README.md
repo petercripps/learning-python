@@ -11,8 +11,9 @@ You can find projects I am working on [here](projects).
 
 Scroll to the end to get the curriculum I've put together to use these resources.
 
-## Last Update (11th July 2020)
-- Added UI (appwindow.py) for entering data. Built using Tkinter.
+## Last Update (1st January 2021)
+- Bug fixes caused by change of file format for COVID-19 data.
+- Added progress indicator when calculating graph for COVID-19 data.
 
 ## Tools
 ### Python

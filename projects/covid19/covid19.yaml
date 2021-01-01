@@ -12,8 +12,8 @@ countries:
   - Brazil
 operation: rate
 graph: True
-fdate: '2020-02-05'
-tdate: '2020-06-12'
+fdate: '2020-02-01'
+tdate: '2020-12-30'
 province: ""
 rate: hundred
 measure: Deaths

@@ -2,23 +2,23 @@
 ### covid19
 Prints various country specific data on the COVID-19 pandemic using data from: https://datahub.io/docs/about.
 
-covid19.csv that can be found here: https://datahub.io/core/covid-19. 
+The contents of covid19.csv can be found here: https://datahub.io/core/covid-19#resource-time-series-19-covid-combined. Look for 'time-series-19-covid-combined'.
 
 population.csv that can be found here: https://datahub.io/core/population.
 
 In each case download the data (as CSV) into the files as named into a folder and set the path to the folder in the variable path. This variable is defined at the top of covid19.py. There is also a basic UI for entering data that way. Just use appwindow.py.
 
 General usage:<br> 
-covid19.py info | rate | compare [options]<br>
+covid19.py info | rate [options]<br>
 
-info shows general COVID-19 data for a given country.<br> 
+'info' shows general COVID-19 data for a given country.<br> 
 
 Options are:<br>
 -c <country> (required):    String containing valid country name e.g. 'United Kingdom'<br>
 -p <province> (optional):   String containing valid province name e.g. 'Bermuda'<br>
 -d <date> (required):       String containing date in form yyyy-mm-dd e.g. '2020-03-31'<br>
 
-rate shows death rate increase/decrease per day between a date range<br>
+'rate' shows death rate increase/decrease per day between a date range<br>
 
 Options are:<br> 
 -c <country> (required):    String containing valid country name e.g. 'United Kingdom'<br>
