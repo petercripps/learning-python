@@ -1,2 +1,2 @@
 # learning-python
-Resources for learning Python
+Tuition, example code and references for learning Python.
